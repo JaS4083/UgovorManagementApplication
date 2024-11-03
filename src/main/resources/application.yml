@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/kupoprodajni}
+    username: ${DB_USER:user}
+    password: ${DB_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    lockRetryCount: -1
+    locations: classpath:db.migration
+    baselineOnMigrate: true
+
+#springdoc:
+#  swagger-ui:
+#    path: /documentation/swagger-ui
+
+management:
+  app:
+    jwtSecret: ======================ContractManegement===========================
+    jwtExpirationMs: 8640000

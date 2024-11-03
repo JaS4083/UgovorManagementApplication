@@ -53,7 +53,7 @@ public class UgovorValidatorTest {
         Assertions.assertThrows(BadRequestException.class, () -> validator.validateUpdateStatus(dto, entity));
     }
 
-    public KupoprodajniUgovor getDefaultEntity(){
+    private KupoprodajniUgovor getDefaultEntity(){
         return KupoprodajniUgovor.builder()
                 .id(1L)
                 .kupac("kupac")
@@ -63,7 +63,7 @@ public class UgovorValidatorTest {
                 .status(Status.NARUCENO)
                 .artiklis(Set.of()).build();
     }
-    public KupoprodajniUgovorDto getDefaultDto(){
+    private KupoprodajniUgovorDto getDefaultDto(){
         return KupoprodajniUgovorDto.builder()
                 .id(1L)
                 .kupac("kupac")

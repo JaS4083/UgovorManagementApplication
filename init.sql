@@ -54,6 +54,9 @@ CREATE TABLE IF NOT EXISTS artikl (
     ugovor_id INT REFERENCES kupoprodajni_ugovor(id)
 );
 
+CREATE INDEX IF NOT EXISTS idx_kupac ON kupoprodajni_ugovor (kupac);
+CREATE INDEX IF NOT EXISTS idx_status ON kupoprodajni_ugovor (status);
+
 WITH inserted_user AS (
   INSERT INTO public.user (id, email, password, first_name, last_name)
   VALUES ('31f91b36-dd1f-480b-b3bb-5dc55bc17e75',
